@@ -23,13 +23,16 @@ class MyTextInputState extends State<MyTextInput> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new TextField(
-                  decoration: new InputDecoration(hintText: "Type in here"),
-                  //onChanged is called whenever we add or delete something on Text Field
-                  onChanged: (String str) {
-                    setState(() {
+                decoration: new InputDecoration(hintText: "Type in here"),
+                //onChanged is called whenever we add or delete something on Text Field
+                onSubmitted: (String str) {
+                  setState(
+                    () {
                       result = str;
-                    });
-                  }),
+                    },
+                  );
+                },
+              ),
               //displaying input text
               new Text(result)
             ],
